@@ -2,16 +2,19 @@ Summary:	Dropbox extension for Nautilus
 Summary(pl.UTF-8):	Rozszerzenie Dropbox dla Nautilusa
 Name:		nautilus-dropbox
 Version:	0.4.1
-Release:	0.1
-License:	GPL v2
+Release:	1
+License:	GPL v2 with exceptions
 Group:		X11/Applications
-Source0:	http://dl.getdropbox.com/u/5143/nautilus-dropbox-packages/%{version}/%{name}-%{version}.tar.bz2
+Source0:	http://dl.getdropbox.com/u/5143/nautilus-dropbox-packages/0.4.1/%{name}-%{version}.tar.bz2
+# Source0-md5:	7e9cf056d5391ae80955b08c01c6dd17
 URL:		http://getdropbox.com/
-BuildRequires:	glib2-devel >= 2.14.0
-BuildRequires:	gtk+2-devel >= 2.12.0
+BuildRequires:	glib2-devel >= 1:2.14.0
+BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	libnotify-devel >= 0.4.4
 BuildRequires:	nautilus-devel >= 2.20.0
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.311
+Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires:	nautilus >= 2.16.0
 Requires:	wget >= 1.10.0
@@ -56,7 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS INSTALL ChangeLog NEWS README
+%doc AUTHORS COPYING ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/nautilus/extensions-2.0/libnautilus-dropbox.so
 %{_iconsdir}/hicolor/*/*/*.png
 %{_iconsdir}/hicolor/*/emblems/*.icon
