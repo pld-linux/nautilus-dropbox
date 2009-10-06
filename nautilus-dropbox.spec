@@ -1,13 +1,14 @@
 Summary:	Dropbox extension for Nautilus
 Summary(pl.UTF-8):	Rozszerzenie Dropbox dla Nautilusa
 Name:		nautilus-dropbox
-Version:	0.5.0
+Version:	0.6.1
 Release:	1
 License:	GPL v2 with exceptions
 Group:		X11/Applications
 Source0:	http://linux.getdropbox.com/packages/%{name}-%{version}.tar.bz2
-# Source0-md5:	9a9750d89b7f6265f8b23913a6d5bac0
+# Source0-md5:	13e6452892d1013927d451524c4af0a9
 URL:		http://getdropbox.com/
+BuildRequires:	docutils
 BuildRequires:	glib2-devel >= 1:2.14.0
 BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	libnotify-devel >= 0.4.4
@@ -60,6 +61,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog NEWS README
+%attr(755,root,root) %{_bindir}/dropbox
 %attr(755,root,root) %{_libdir}/nautilus/extensions-2.0/libnautilus-dropbox.so
 %{_iconsdir}/hicolor/*/*/*.png
 %{_iconsdir}/hicolor/*/emblems/*.icon
+%{_desktopdir}/dropbox.desktop
+%{_mandir}/man1/*.1*
