@@ -15,6 +15,7 @@ BuildRequires:	nautilus-devel >= 2.20.0
 BuildRequires:	pkgconfig
 BuildRequires:	python-docutils
 BuildRequires:	python-pygtk-devel
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.311
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
