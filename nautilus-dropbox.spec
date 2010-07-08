@@ -7,6 +7,7 @@ License:	GPL v2 with exceptions
 Group:		X11/Applications
 Source0:	http://linux.getdropbox.com/packages/%{name}-%{version}.tar.bz2
 # Source0-md5:	aed416ff7876c8bd6a4690c8e8529db1
+Patch0:		dropboxd-path.patch
 URL:		http://getdropbox.com/
 BuildRequires:	glib2-devel >= 1:2.14.0
 BuildRequires:	gtk+2-devel >= 2:2.12.0
@@ -20,7 +21,6 @@ BuildRequires:	rpmbuild(macros) >= 1.311
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires:	nautilus >= 2.16.0
-Requires:	wget >= 1.10.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,6 +35,7 @@ pomiędzy określonymi maszynami.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure \
