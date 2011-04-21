@@ -10,9 +10,9 @@ Source0:	http://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
 Patch0:		dropboxd-path.patch
 URL:		http://getdropbox.com/
 BuildRequires:	glib2-devel >= 1:2.14.0
-BuildRequires:	gtk+2-devel >= 2:2.12.0
+BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	libnotify-devel >= 0.4.4
-BuildRequires:	nautilus-devel >= 2.20.0
+BuildRequires:	nautilus-devel >= 3.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	python-docutils
 BuildRequires:	python-pygtk-devel
@@ -20,7 +20,7 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.311
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme
-Requires:	nautilus >= 2.16.0
+Requires:	nautilus >= 3.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
