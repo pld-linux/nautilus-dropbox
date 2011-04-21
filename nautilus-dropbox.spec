@@ -2,11 +2,11 @@ Summary:	Dropbox extension for Nautilus
 Summary(pl.UTF-8):	Rozszerzenie Dropbox dla Nautilusa
 Name:		nautilus-dropbox
 Version:	0.6.7
-Release:	2
+Release:	3
 License:	GPL v2 with exceptions
 Group:		X11/Applications
 Source0:	http://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
-# Source0-md5:	e1c3eaa37b04d6e7b2bedab9b92975d4
+# Source0-md5:	089a2fb168ba62176d6e35c41b7d6831
 Patch0:		dropboxd-path.patch
 URL:		http://getdropbox.com/
 BuildRequires:	glib2-devel >= 1:2.14.0
@@ -50,7 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/nautilus/extensions-2.0/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/nautilus/extensions-3.0/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -65,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/dropbox
-%attr(755,root,root) %{_libdir}/nautilus/extensions-2.0/libnautilus-dropbox.so
+%attr(755,root,root) %{_libdir}/nautilus/extensions-3.0/libnautilus-dropbox.so
 %{_iconsdir}/hicolor/*/*/*.png
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/emblems
