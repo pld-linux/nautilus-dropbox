@@ -5,10 +5,10 @@
  
  def start_dropbox():
 -    db_path = os.path.expanduser(u"~/.dropbox-dist/dropboxd").encode(sys.getfilesystemencoding())
-+	# first try dropboxd from system, fallback to user install
++    # first try dropboxd from system, fallback to user install
 +    db_path = "/usr/bin/dropboxd"
 +    if not os.access(db_path, os.X_OK):
-+		db_path = os.path.expanduser(u"~/.dropbox-dist/dropboxd").encode(sys.getfilesystemencoding())
++        db_path = os.path.expanduser(u"~/.dropbox-dist/dropboxd").encode(sys.getfilesystemencoding())
      if os.access(db_path, os.X_OK):
          f = open("/dev/null", "w")
          # we don't reap the child because we're gonna die anyway, let init do it
