@@ -1,12 +1,12 @@
 Summary:	Dropbox extension for Nautilus
 Summary(pl.UTF-8):	Rozszerzenie Dropbox dla Nautilusa
 Name:		nautilus-dropbox
-Version:	1.4.0
+Version:	1.6.0
 Release:	1
 License:	GPL v2 with exceptions
 Group:		X11/Applications
 Source0:	http://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
-# Source0-md5:	ee08ccedccd4c49f1464957146e14d26
+# Source0-md5:	ab4ca49eb24498d14edad2c29aac530b
 Patch0:		dropboxd-path.patch
 URL:		http://getdropbox.com/
 BuildRequires:	glib2-devel >= 1:2.14.0
