@@ -1,12 +1,12 @@
 Summary:	Dropbox extension for Nautilus
 Summary(pl.UTF-8):	Rozszerzenie Dropbox dla Nautilusa
 Name:		nautilus-dropbox
-Version:	1.6.0
+Version:	1.6.1
 Release:	1
 License:	GPL v2 with exceptions
 Group:		X11/Applications
 Source0:	http://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
-# Source0-md5:	ab4ca49eb24498d14edad2c29aac530b
+# Source0-md5:	25e451c53349c0b2e5e83c1499e70d54
 Patch0:		dropboxd-path.patch
 URL:		http://getdropbox.com/
 BuildRequires:	glib2-devel >= 1:2.14.0
@@ -21,6 +21,9 @@ BuildRequires:	rpmbuild(macros) >= 1.311
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme
 Requires:	nautilus >= 3.0.0
+Requires:	python-modules
+Requires:	python-pygtk-gtk
+Requires:	xdg-utils
 Suggests:	dropbox
 Suggests:	python-pygpgme
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -48,7 +51,6 @@ pomiędzy określonymi maszynami.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
